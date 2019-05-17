@@ -1,3 +1,4 @@
 #!/bin/sh
 # Simply opens duck duck go in surf
+ifinstalled surf
 surf duckduckgo.com
