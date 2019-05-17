@@ -1,0 +1,3 @@
+#!/bin/sh
+# Simply opens duck duck go in surf
+surf duckduckgo.com

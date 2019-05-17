@@ -1,0 +1,4 @@
+#!/bin/sh
+ifinstalled octave
+echo "Welcome to Octave (MATLAB clone with advanced features)"
+octave -q
