@@ -1,0 +1,34 @@
+#!/bin/sh
+#This is a general installer for Arch Linux that installs and confiures Arch Utilities for Luke Bubar
+
+t=$TERMINAL
+
+# Updater
+#$t sudo pacman -Syu
+sudo pacman -Syu
+
+# Main installer
+
+# Core Utils
+
+# This is an array of all the programs we need to install (or check to see if they are installed).
+progs=( "gvim" "neovim" "riot-desktop" "lutris" "steam-manjaro" "fish" "youtube-dl" "youtube-viewer" "st" "xwallpaper" "gnome-maps" "surf" "firefox" "dmenu" "ls" "zathura" )
+echo ${progs[@]}
+
+max=${#progs[@]}-1
+#max=$max - 1 #HELP... how do I subtract one from this?
+for i in {0..6}
+do
+	#$t sudo pacman -S --noconfirm --needed ${#progs[i]}
+	sudo pacman -S --needed ${progs[i]}
+done
+
+# BlackArch
+
+# Insert query of whether or not you would like to install blackarch above
+cd ~/Downloads
+curl -O https://blackarch.org/strap.sh
+sha1sum strap.sh
+chmod +x strap.sh
+sudo ./strap.sh
+cd ~/
