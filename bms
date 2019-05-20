@@ -2,7 +2,8 @@
 #This is a general installer for Arch Linux that installs and confiures Arch Utilities for Luke Bubar
 
 t=$TERMINAL
-
+n="
+"
 # Updater
 #$t sudo pacman -Syu
 sudo pacman -Syu
@@ -12,16 +13,58 @@ sudo pacman -Syu
 # Core Utils
 
 # This is an array of all the programs we need to install (or check to see if they are installed).
-progs=( "gvim" "neovim" "riot-desktop" "lutris" "steam-manjaro" "fish" "youtube-dl" "youtube-viewer" "st" "xwallpaper" "gnome-maps" "surf" "firefox" "dmenu" "ls" "zathura" )
-echo ${progs[@]}
+core=(
+"gvim"
+"neovim"
+"riot-desktop"
+"fish"
+"youtube-dl"
+"youtube-viewer"
+"st"
+"xwallpaper"
+"gnome-maps"
+"surf"
+"dmenu"
+"ls"
+"zathura"
+)
 
-max=${#progs[@]}-1
-#max=$max - 1 #HELP... how do I subtract one from this?
-for i in {0..6}
+core_extra=(
+"firefox"
+)
+
+gaming=(
+"lutris"
+"steam-manjaro"
+"discord"
+)
+
+all=(
+"core"
+"core_extra"
+"gaming"
+)
+
+# query
+
+#for j in ${all[@]}
+#do
+#	read -p "Do you want to install the $j list? ( 'y' for yes, 'n' for no, or 'l' for list the programs) $n " ynl
+#	case $ynl in
+#		[Yy]* ) progs=${$j[@]};;
+#		[Nn]* ) ;;
+#		[Ll]* ) echo ${$j[@]};;
+#		* ) echo "Please pick yes, no, or list.$n";;
+#	esac
+
+progs=${core[@]} #temporary patch until I can get the query workin
+
+for i in ${progs[@]}
 do
-	#$t sudo pacman -S --noconfirm --needed ${#progs[i]}
-	sudo pacman -S --needed ${progs[i]}
+	#$t sudo pacman -S --noconfirm --needed $i
+	sudo pacman -S --needed $i
 done
+#done
 
 # BlackArch
 
