@@ -19,23 +19,25 @@ core=(
 "riot-desktop"
 "fish"
 "youtube-dl"
-"youtube-viewer"
 "st"
 "xwallpaper"
-"gnome-maps"
 "surf"
 "dmenu"
 "ls"
 "zathura"
+"syncthing"
+"firefox"
 )
 
 core_extra=(
-"firefox"
+"openscad"
+"gnome-maps"
+"youtube-viewer"
 )
 
 gaming=(
 "lutris"
-"steam-manjaro"
+"steam"
 "discord"
 )
 
