@@ -62,6 +62,9 @@ exec syncthing
 exec ~/.screenlayout/hicks_313.sh
 # Setting the background:
 exec --no-startup-id setbg
+# Starting Riot
+exec --no-startup-id riot-desktop; workspace $ws10
+
 
 bar {
 	font pango:mono 10
